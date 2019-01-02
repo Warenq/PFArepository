@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>	
+	<title>Enregistrer</title>
+</h:head>
+
+<link href="/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/lib/js/bootstrap.min.js">
+</script>
+<form action="Servlet" method="POST">
+<button type="submit" class="btn btn-dark">Lister les contacts</button>
+</form>
+
+<h:form>
+	<p:growl id="messages"></p:growl>
+	<p:panelGrid columns="2">
+		<p:outputLabel value="Entrer le nom"></p:outputLabel>
+		<p:inputText value="#{registerContact.contact.nom}"></p:inputText>
+		<p:outputLabel value="Entrer le numéro"></p:outputLabel>
+		<p:inputText value="#{registerContact.contact.num}"></p:inputText>					
+	</p:panelGrid>
+	<p:commandButton value="Register" action="#{registerContact.register}" update="messages"></p:commandButton>
+</h:form>
+
+</html>
