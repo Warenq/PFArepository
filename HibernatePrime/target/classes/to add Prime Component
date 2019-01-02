@@ -1,0 +1,13 @@
+<p:dataTable var="c" value="#{dtBasicView.cs}">
+    <p:column headerText="Id">
+        <h:outputText value="#{c.id_contact}" />
+    </p:column>
+ 
+    <p:column headerText="Nom">
+        <h:outputText value="#{c.nom}" />
+    </p:column>
+ 
+    <p:column headerText="Numero Telephone">
+        <h:outputText value="#{c.num}" />
+    </p:column>
+</p:dataTable>

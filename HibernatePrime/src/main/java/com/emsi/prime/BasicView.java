@@ -17,18 +17,21 @@ import com.emsi.model.Contact;
 public class BasicView implements Serializable {
      
      
-    @ManagedProperty("#{ContactDao}")
-    @EJB
+	@ManagedProperty("#{ContactDao}")
     private ContactDao service;
     public List<Contact> cs;
  
     @PostConstruct
     public void init() {
+    	service = new ContactDao();
         cs = getContacts();
     	}
      
     public List<Contact> getContacts() {
-    	return service.findall();
+    	for(Contact c : service.findall()) {
+    		cs.add(c);
+    	}
+    	return cs;
     }
  
     public void setService(ContactDao service) {
